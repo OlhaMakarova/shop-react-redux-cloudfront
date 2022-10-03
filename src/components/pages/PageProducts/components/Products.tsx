@@ -14,7 +14,9 @@ export default function Products() {
   if (isLoading) {
     return <Typography>Loading...</Typography>;
   }
-
+  if (!data.length) {
+    return <Typography variant="h5">No products</Typography>;
+  }
   return (
     <Grid container spacing={4}>
       {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
