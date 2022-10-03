@@ -1,6 +1,6 @@
 # React-shop-cloudfront
 
-## Task 2
+## Task 2 results
 
 - [S3 backet](http://makarovas3b.s3-website.eu-central-1.amazonaws.com/)
 
