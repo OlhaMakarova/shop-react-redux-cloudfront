@@ -6,6 +6,15 @@
 
 - [CloudFront](https://d1921czszpbvye.cloudfront.net/)
 
+## Task 3 results
+
+- [Product Service API /products](https://6ulzvr5kbe.execute-api.eu-central-1.amazonaws.com/dev/products)
+
+- [Product Service API /products/{productId}](https://6ulzvr5kbe.execute-api.eu-central-1.amazonaws.com/dev/products/{productId})
+
+- [SWAGGER API](https://ldhkwgaxn0.execute-api.eu-central-1.amazonaws.com/swagger)
+
+
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
 
 - [Vite](https://vitejs.dev/) as a project bundler
