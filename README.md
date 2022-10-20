@@ -1,18 +1,8 @@
 # React-shop-cloudfront
 
-## Task 2 results
-
 - [S3 backet](http://makarovas3b.s3-website.eu-central-1.amazonaws.com/)
 
 - [CloudFront](https://d1921czszpbvye.cloudfront.net/)
-
-## Task 3 results
-
-- [Product Service API /products](https://6ulzvr5kbe.execute-api.eu-central-1.amazonaws.com/dev/products)
-
-- [Product Service API /products/{productId}](https://6ulzvr5kbe.execute-api.eu-central-1.amazonaws.com/dev/products/{productId})
-
-- [SWAGGER API](https://ldhkwgaxn0.execute-api.eu-central-1.amazonaws.com/swagger)
 
 
 This is frontend starter project for nodejs-aws mentoring program. It uses the following technologies:
