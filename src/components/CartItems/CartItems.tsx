@@ -25,7 +25,9 @@ export default function CartItems({ items, isEditable }: CartItemsProps) {
             sx={{ padding: (theme) => theme.spacing(1, 0) }}
             key={cartItem.product.id}
           >
-            {isEditable && <AddProductToCart product={cartItem.product} />}
+            {isEditable && (
+              <AddProductToCart count={1} product={cartItem.product} />
+            )}
             <ListItemText
               primary={cartItem.product.title}
               secondary={cartItem.product.description}

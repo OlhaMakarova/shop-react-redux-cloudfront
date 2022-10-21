@@ -7,7 +7,6 @@ import Typography from "@mui/material/Typography";
 import { formatAsPrice } from "~/utils/utils";
 import AddProductToCart from "~/components/AddProductToCart/AddProductToCart";
 import { useAvailableProducts } from "~/queries/products";
-import API_PATHS from "~/constants/apiPaths";
 
 export default function Products() {
   const { data = [], isLoading } = useAvailableProducts();
@@ -20,29 +19,40 @@ export default function Products() {
   }
   return (
     <Grid container spacing={4}>
-      {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
-      {data.map(({ count, ...product }, index) => (
-        <Grid item key={product.id} xs={12} sm={6} md={4}>
-          <Card
-            sx={{ height: "100%", display: "flex", flexDirection: "column" }}
-          >
-            <CardMedia
-              sx={{ pt: "100%" }}
-              image={product.url} //{`https://source.unsplash.com/random?sig=${index}`}
-              title="Image title"
-            />
-            <CardContent sx={{ flexGrow: 1 }}>
-              <Typography gutterBottom variant="h5" component="h2">
-                {product.title}
-              </Typography>
-              <Typography>{formatAsPrice(product.price)}</Typography>
-            </CardContent>
-            <CardActions>
-              <AddProductToCart product={product} />
-            </CardActions>
-          </Card>
-        </Grid>
-      ))}
+      {data.map(({ count, ...product }, index) => {
+        console.log("count ", count);
+        return (
+          <Grid item key={product.id} xs={12} sm={6} md={4}>
+            <Card
+              sx={{ height: "100%", display: "flex", flexDirection: "column" }}
+            >
+              <CardMedia
+                sx={{ pt: "100%" }}
+                image={product.url}
+                title="Image title"
+              />
+              <CardContent sx={{ flexGrow: 1 }}>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {product.title}
+                </Typography>
+                <Typography>{formatAsPrice(product.price)}</Typography>
+              </CardContent>
+
+              {count > 0 ? (
+                <CardActions>
+                  <AddProductToCart count={count} product={product} />
+                </CardActions>
+              ) : (
+                <CardContent sx={{ flexGrow: 1 }}>
+                  <Typography color={"secondary"} variant="body1" component="p">
+                    {"Product is out of stock :("}
+                  </Typography>
+                </CardContent>
+              )}
+            </Card>
+          </Grid>
+        );
+      })}
     </Grid>
   );
 }
