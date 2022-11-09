@@ -20,7 +20,6 @@ export default function Products() {
   return (
     <Grid container spacing={4}>
       {data.map(({ count, ...product }, index) => {
-        console.log("count ", count);
         return (
           <Grid item key={product.id} xs={12} sm={6} md={4}>
             <Card
