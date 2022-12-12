@@ -4,8 +4,19 @@ import CSVFileImport from "~/components/pages/admin/PageProductImport/components
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 export default function PageProductImport() {
+  const token = localStorage.getItem("authorization_token");
+  useEffect(() => {
+    if (!token) {
+      window.localStorage.setItem(
+        "authorization_token",
+        "T2x0YUha2Fvb3ZhOlFU1RfUEFTU1dPUkO=="
+      );
+    }
+  }, [token]);
+
   return (
     <Box py={3}>
       <Box mb={2} display="flex" justifyContent="space-between">
